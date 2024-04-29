@@ -28,7 +28,7 @@ const passwordReducer = (prevState, action) => {
 };
 
 const Login = () => {
-  const auth = useContext(AuthStore);
+  const { loginHandler } = useContext(AuthStore);
   // const [enteredEmail, setEnteredEmail] = useState("");
   // const [emailIsValid, setEmailIsValid] = useState();
   const [emailState, dispatchEmail] = useReducer(emailReducer, {
@@ -85,7 +85,7 @@ const Login = () => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    auth.loginHandler(emailState.value, passwordState.value);
+    loginHandler(emailState.value, passwordState.value);
   };
 
   return (

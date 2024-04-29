@@ -6,23 +6,23 @@ import AuthStore from "../../store/auth-store";
 const Navigation = () => {
   return (
     <AuthStore.Consumer>
-      {(auth) => {
+      {({ abc, logoutHandler }) => {
         return (
           <nav className={classes.nav}>
             <ul>
-              {auth.abc && (
+              {abc && (
                 <li>
                   <a href="/">Users</a>
                 </li>
               )}
-              {auth.abc && (
+              {abc && (
                 <li>
                   <a href="/">Admin</a>
                 </li>
               )}
-              {auth.abc && (
+              {abc && (
                 <li>
-                  <button onClick={auth.logoutHandler}>Logout</button>
+                  <button onClick={logoutHandler}>Logout</button>
                 </li>
               )}
             </ul>
